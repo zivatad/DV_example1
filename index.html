@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>k.wada adyen data viz assignment</title>
+    <!-- write style here for the sake of quick prototype -->
+    <style>
+      body {
+        font: 10px sans-serif;
+        padding: 20px;
+      }
+      .title {
+        font-size: 18px;
+      }
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+      }
+      .layer {
+        opacity: 0.65;
+      }
+      #chart1-box_top {
+        height: 360px;
+        width: 800px;
+        position: relative;
+      }
+      .yaxis0 {
+        position: absolute;
+        top: 355px;
+        left: 46px;
+        height: 8px;
+        width: 8px;
+      }
+     .bar-chart {
+        display: inline-block;
+        margin-top: 30px;
+     }
+     #chart3 {
+        margin-left: 30px;
+     }
+     .chart2_xaxis, .chart3_xaxis {
+        fill: #666666;
+     }
+    </style>
+  </head>
+
+  <body>
+    <!-- link to jQuery and d3 -->
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script src="lib/d3.min_r.js"></script>
+    
+    <!-- chart 1 -->
+    <section id="chart1">
+      <h1 class="title">Authorized and Chargebacks Overview (Aug 22 - Sep 20, 2016)</h1>
+      <div id="chart1-box">
+        <div id="chart1-box_top">
+          <div class="yaxis0">0</div>
+        </div>
+        <div id="chart1-box_bottom"></div>
+      </div>
+    </section>
+    <!-- chart 2 -->
+    <section id="chart2" class="bar-chart">
+      <h1>Percentage of Chargebacks Count</h1>
+      <div id="chart2-box"></div>
+    </section>
+    <!-- chart 3 -->
+    <section id="chart3" class="bar-chart">
+      <h1>Percentage of Notifications of Fraud Amount</h1>
+      <div id="chart3-box"></div>
+    </section>
+    <!-- for loading data loacally (d3.json() doesn't work well when accessing the file locally) -->
+    <script src="paymentdata.js" type="text/javascript"></script><!-- contains json data with js variable -->
+    <script src="d3chart.js" type="text/javascript"></script>
+  </body>
+</html>
